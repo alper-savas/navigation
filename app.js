@@ -75,7 +75,7 @@ async function findRoute(start, destination) {
 
   const getRoute = () => {
     const request = new Request(
-      `http://www.mapquestapi.com/directions/v2/route?key=${key1}`,
+      `https://www.mapquestapi.com/directions/v2/route?key=${key1}`,
       {
         method: "POST",
         body: JSON.stringify(obj),
@@ -89,7 +89,7 @@ async function findRoute(start, destination) {
 
   const getNarrative = async () => {
     const response = await fetch(
-      `http://www.mapquestapi.com/directions/v2/route?key=${key1}`,
+      `https://www.mapquestapi.com/directions/v2/route?key=${key1}`,
       {
         method: "POST",
         body: JSON.stringify(obj),
