@@ -2,7 +2,7 @@
   <head>
     <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -19,53 +19,99 @@
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8CcF7mDQVVaqBpv7AtIEFf_vQWyPSJSw&libraries=places&callback=initMap"
+    ></script>
     <script defer src="config.js"></script>
     <script defer src="app.js"></script>
   </head>
   <body>
     <main class="grid">
       <div class="header">
-        <div class="route-heading">
-          <img class="nav-img" src="css/img/navigation.svg" alt="" />
-          <p>Route Planner</p>
+        <div class="heading">
+          <div class="route-heading">
+            <img class="nav-img" src="css/img/navigation.svg" alt="" />
+            <p>Route Planner</p>
+          </div>
+          <div class="form-container">
+            <form class="form" action="#">
+              <div class="starting-div">
+                <div>
+                  <label for="starting-point"
+                    ><ion-icon class="dot" name="ellipse-outline"></ion-icon
+                  ></label>
+                  <input
+                    class="starting-point"
+                    id="starting-point"
+                    type="text"
+                    placeholder="Starting point..."
+                    required
+                  />
+                </div>
+                <div class="suggestions">
+                  <input
+                    class="suggestion"
+                    id="suggestion"
+                    type="text"
+                    placeholder=" "
+                  />
+                  <input
+                    class="suggestion"
+                    id="suggestion"
+                    type="text"
+                    placeholder=" "
+                  />
+                  <input
+                    class="suggestion"
+                    id="suggestion"
+                    type="text"
+                    placeholder=" "
+                  />
+                </div>
+              </div>
+              <div class="destination-div">
+                <div>
+                  <label for="destination"
+                    ><ion-icon class="pin" name="pin-outline"></ion-icon
+                  ></label>
+                  <input
+                    id="destination"
+                    class="destination-point"
+                    type="text"
+                    placeholder="Destination..."
+                    required
+                  />
+                </div>
+                <div class="suggestions">
+                  <input
+                    class="suggestion"
+                    id="suggestion"
+                    type="text"
+                    placeholder=" "
+                  />
+                  <input
+                    class="suggestion"
+                    id="suggestion"
+                    type="text"
+                    placeholder=" "
+                  />
+                  <input
+                    class="suggestion"
+                    id="suggestion"
+                    type="text"
+                    placeholder=" "
+                  />
+                </div>
+              </div>
+              <button class="submit-form">Search</button>
+            </form>
+          </div>
         </div>
-        <div class="form-container">
-          <form class="form" action="#">
-            <div>
-              <label for="starting-point"
-                ><ion-icon class="dot" name="ellipse-outline"></ion-icon
-              ></label>
-              <input
-                class="starting-point"
-                id="starting-point"
-                type="text"
-                placeholder="Starting point..."
-                required
-              />
-            </div>
-            <!-- <div>
-              <input
-                class="suggestion hidden"
-                id="suggestion"
-                type="text"
-                placeholder=""
-                required
-              />
-            </div> -->
-            <div>
-              <label for="destination"
-                ><ion-icon class="pin" name="pin-outline"></ion-icon
-              ></label>
-              <input
-                id="destination"
-                class="destination-point"
-                type="text"
-                placeholder="Destination..."
-                required
-              />
-            </div>
-            <button class="submit-form">Search</button>
-          </form>
+        <div class="directions">
+          <div class="direction-elements">
+            <div class="dir-inner"></div>
+          </div>
         </div>
       </div>
       <div class="map" id="map"></div>
